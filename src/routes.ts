@@ -8,6 +8,7 @@ const options = {
   compact: true,
   spaces: 2,
   ignoreAttributes: true,
+  textKey: 'text',
 };
 
 router.get('/', async (req: Request, res: Response) => {
