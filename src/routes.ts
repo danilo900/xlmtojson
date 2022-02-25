@@ -21,7 +21,7 @@ router.post('/', async (req: Request, res: Response) => {
 
     return res.json(json);
   } catch (e) {
-    return res.json({ text: 'Erro converting XML.' });
+    return res.json({ text: 'Error converting XML.' });
   }
 });
 
