@@ -7,9 +7,16 @@ const router = Router();
 router.get('/', async (req: Request, res: Response) => {
   const { xml, options } = req.body;
 
-  const json = JSON.parse(convert.xml2json(xml, options));
+  if (!xml) {
+    return res.json({ text: 'Json not provided.' });
+  }
 
-  return res.json(json);
+  try {
+    const json = JSON.parse(convert.xml2json(xml, options));
+    return res.json(json);
+  } catch (e) {
+    return res.json({ text: 'Erro converting XML.' });
+  }
 });
 
 export { router };
