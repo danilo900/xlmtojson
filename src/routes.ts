@@ -5,6 +5,10 @@ import convert from 'xml-js';
 const router = Router();
 
 router.get('/', async (req: Request, res: Response) => {
+  return res.json({ text: 'API ready.' });
+});
+
+router.post('/', async (req: Request, res: Response) => {
   const { xml, options } = req.body;
 
   if (!xml) {
