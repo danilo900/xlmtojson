@@ -16,7 +16,8 @@ router.get('/', async (req: Request, res: Response) => {
 
 router.post('/', async (req: Request, res: Response) => {
   try {
-    const json = JSON.parse(convert.xml2json(req.body, options));
+    const json = JSON.parse(convert.xml2json(req.body, options).replace(/(s:|a:)/g, ''));
+
     return res.json(json);
   } catch (e) {
     return res.json({ text: 'Erro converting XML.' });
