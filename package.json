@@ -4,9 +4,9 @@
   "description": "App destinado à converter um XML e retornar um JSON",
   "main": "server.ts",
   "scripts": {
+    "dev": "tsnd --ignore-watch node_modules --respawn src/server.ts",
     "build": "tsc",
-    "api": "node dist/server.js",
-    "dev": "tsnd --ignore-watch node_modules --respawn src/server.ts"
+    "api": "npm run build && node dist/server.js"
   },
   "repository": {
     "type": "git",
